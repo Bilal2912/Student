@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./styles/style.css">
+    {{!-- <link rel="stylesheet" href="../styles/styles.css"> --}}
+    <title>S.P.I.T. Inventory | Home</title>
+</head>
+<body class="">
+    {{!-- grid place-items-center --}}
+    {{>navbar}}
+    {{>login}}
+    <div class="cont h-screen">
+        {{!-- <h1 class="text-9xl text-blue-800 absolute top-64 z-10 font-sans">WELCOME</h1> --}}
+        {{!-- <img src="bg-1.jpg" alt="" class="h-max p-5 opacity-70 top-20 relative"> --}}
+        {{!-- <img src="right-arrow.png" alt="" class="src absolute h-14 top-3/4 right-16 cursor-pointer">
+        <img src="left-arrow.png" alt="" class="src absolute h-14 top-3/4 left-16 cursor-pointer"> --}}
+    </div>
+    <div class="flex items-center justify-center">
+        <h1 class="text-5xl">PROJECTS</h1>
+    </div>
+    <div class="bg-blue-200 h-96" id="proj">
+        <div class="project rounded-lg mx-32 my-5 bg-blue-500 h-72 relative top-12 bg-no-repeat bg-cover bg-center" style="background-image:url('proj-1.jpg')" id="1">
+            <div class="hidden">
+                <h1 class="text-3xl px-5 py-2">Project Name</h1>
+                <hr class="bg-black h-0.5 border-0">
+                <p class="text-xl px-5 py-3" id="con-1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus unde ipsum illo nulla perspiciatis quis optio laborum atque odio facilis fugit sunt laudantium quasi at aspernatur, sed tempore dicta nostrum magnam recusandae, eius assumenda nisi sapiente mollitia? Sint architecto dolorem hic unde libero. Nam asperiores maiores at rerum eveniet exercitationem.</p>
+            </div>
+            <div class="hidden">
+                <h1 class="text-3xl px-5 py-2">Project Name</h1>
+                <hr class="bg-black h-0.5 border-0">
+                <p class="text-xl px-5 py-3" id="con-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus unde ipsum illo nulla perspiciatis quis optio laborum atque odio facilis fugit sunt laudantium quasi at aspernatur, sed tempore dicta nostrum magnam recusandae, eius assumenda nisi sapiente mollitia? Sint architecto dolorem hic unde libero. Nam asperiores maiores at rerum eveniet exercitationem Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, officiis, quae est non exercitationem alias at labore similique, perspiciatis unde quia saepe nesciunt molestias soluta ex deserunt porro esse impedit..</p>
+            </div>
+            <div class="hidden">
+                <h1 class="text-3xl px-5 py-2">Project Name</h1>
+                <hr class="bg-black h-0.5 border-0">
+                <p class="text-xl px-5 py-3" id="con-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus unde ipsum illo nulla perspiciatis quis optio laborum atque odio facilis fugit sunt laudantium quasi at aspernatur, sed tempore dicta nostrum magnam recusandae, eius assumenda nisi sapiente mollitia? Sint architecto dolorem hic unde libero. Nam asperiores maiores at rerum eveniet exercitationem. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat, architecto?</p>
+            </div>
+        </div>
+        <img src="right-arrow.png" alt="" class="h-10 cursor-pointer hover:h-12 absolute right-10 -bottom-96" id="rarrow">
+        <img src="left-arrow.png" alt="" class="h-10 cursor-pointer hover:h-12 absolute left-10 -bottom-96" id="larrow" >
+    </div>
+    <div class="flex items-center justify-center my-5">
+        <h1 class="text-5xl">MENTORS</h1>
+    </div>
+    <div class="bg-blue-200 h-72 flex justify-evenly">
+        <div class="rao rounded-full bg-red-600 w-52 h-52 my-10 bg-no-repeat bg-cover bg-top" style="background-image: url(mentor-1.jpg)"></div>
+        <div class="content w-3/4 my-10">
+            <h1 class="text-4xl">Prof Y.S.Rao</h1>
+            <p class="text-xl my-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur corrupti veritatis provident accusamus nam nesciunt molestias, reiciendis dicta inventore eaque corporis, soluta ab rerum ea laborum culpa, quaerat ipsam neque reprehenderit? Sed reiciendis dicta porro quam doloremque animi itaque rem tenetur a accusantium, iure optio maxime molestiae nisi laboriosam tempore?</p>
+        </div>
+    </div>
+    <hr class="h-1 bg-black">
+    <div class="bg-blue-200 h-72 flex justify-evenly">
+        <div class="content w-3/4 my-10">
+            <h1 class="text-4xl">Prof Rajendra Sawant</h1>
+            <p class="text-xl my-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur corrupti veritatis provident accusamus nam nesciunt molestias, reiciendis dicta inventore eaque corporis, soluta ab rerum ea laborum culpa, quaerat ipsam neque reprehenderit? Sed reiciendis dicta porro quam doloremque animi itaque rem tenetur a accusantium, iure optio maxime molestiae nisi laboriosam tempore?</p>
+        </div>
+        <div class="sawant rounded-full bg-red-600 w-52 h-52 my-10 bg-no-repeat bg-cover bg-center" style="background-image: url(mentor-2.jpg)"></div>
+    </div>
+    {{>footer}}
+</body>
+<script src="./js/home.js"></script>
+<script src="./js/login.js"></script>
+</html>

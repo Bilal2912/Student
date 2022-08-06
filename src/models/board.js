@@ -1,0 +1,62 @@
+const mongoose = require('mongoose');
+const status = new mongoose.Schema({
+    boardno:{
+        type:String,
+        required:true,
+        unique:true
+    },
+    lcd:{
+        type:String,
+        required:true
+    },
+    ad9833:{
+        type:String,
+        required:true
+    },
+    triplefive:{
+        type:String,
+        required:true
+    },
+    plus15V:{
+        type:String,
+        required:true
+    },
+    minus15V:{
+        type:String,
+        required:true
+    },
+    plus5V:{
+        type:String,
+        required:true
+    },
+    plus3point3V:{
+        type:String,
+        required:true
+    },
+    varDC:{
+        type:String,
+        required:true
+    },
+    ccled:{
+        type:String,
+        required:true
+    },
+    caled:{
+        type:String,
+        required:true
+    },
+    sevensegmentone:{
+        type:String,
+        required:true
+    },
+    sevensegmenttwo:{
+        type:String,
+        required:true
+    },
+    remark:{
+        type:String,
+        required:true
+    }
+})
+const Record = new mongoose.model("Record", status);
+module.exports = Record;

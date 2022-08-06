@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./styles/style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                screens:{
+                xxsm:'300px',
+                xsm:'450px',
+                sm:'670px',
+                md:'768px',
+                lg: '1024px',
+                xl: '1280px',
+                '2xl': '1536px',
+                },
+                extend: {
+                    spacing:{
+                        15:'3.75rem',
+                        18:'4.5rem',
+                        22:'5.5rem',
+                        26:'6.4rem',
+                        30:'7.5rem',
+                        84:'21rem',
+                        86:'21.25rem',
+                        87:'21.55rem',
+                        88:'22rem',
+                        92:'23rem',
+                        98:'25rem',
+                        100:'30rem'
+                    }
+                },
+            },
+        }
+    </script>
+    <title>S.P.I.T. Inventory | Product Inventory</title>
+</head>
+<body>
+    {{>navbar}}
+    {{>login}}
+    <div class="upper flex justify-start mt-5">
+        <h1 class="text-5xl relative left-10">Product Inventory</h1>
+        {{!-- <input class="rounded-md text-2xl w-80 px-4 py-2 border-2 border-black" type="text" placeholder="Search Here...">
+        <div class="search h-12 w-12 rounded-md bg-blue-800 absolute right-24 top-26 flex justify-center items-center cursor-pointer hover:bg-blue-900">
+            <img src="search.png" alt="" srcset="" class="w-9">
+        </div> --}}
+    </div>
+    <div class="products flex justify-evenly mt-7">
+        <div class="first bg-blue-300 w-98 h-100 rounded-md flex flex-col items-center">
+            <h1 class="text-2xl mt-5 font-semibold">Mobile Lab Board</h1>
+            <div class="prod w-84 h-56 bg-orange-600 mt-4 rounded-md bg-no-repeat bg-cover" style="background-image: url(prod-1.jpg)"></div>
+            <h1 class="text-green-700 text-3xl mt-5 font-semibold">Available</h1>
+            <div class="buttons mt-5 flex justify-between w-84">
+                <button class="click rounded-md px-4 py-1 bg-white text-xl hover:bg-black hover:text-white" data-modal-toggle="extralarge-modal" id="modal-1">Description</button>
+                <button class="work rounded-md px-4 py-1 bg-white text-xl hover:bg-black hover:text-white">Working Status</button>
+            </div>
+            <div class="btn mt-5 w-84 flex justify-center">
+                <button class="issue rounded-md px-4 py-1 bg-white text-xl relative right-4 hover:bg-black hover:text-white">Issue Now</button>
+            </div>
+        </div>
+        <div class="first bg-blue-300 w-98 h-100 rounded-md flex flex-col items-center">
+            <h1 class="text-2xl mt-5 font-semibold">Resistors</h1>
+            <div class="prod w-84 h-56 bg-orange-600 mt-4 rounded-md bg-no-repeat bg-cover" style="background-image: url(prod-1.jpg)"></div>
+
+            {{!-- Not Available --}}
+            <h1 class="text-red-700 text-3xl mt-5 font-semibold">Not Available</h1>
+            <div class="buttons mt-5 flex justify-between w-84">
+                <button class="click rounded-md px-4 py-1 bg-white text-xl hover:bg-black hover:text-white" data-modal-toggle="extralarge-modal" id="modal-2">Description</button>
+                <button class="work rounded-md px-4 py-1 bg-white text-xl hover:bg-black hover:text-white">Working Status</button>
+            </div>
+            <div class="btn mt-5 w-84 flex justify-center">
+                <button class="issue rounded-md px-4 py-1 bg-slate-300 text-slate-700 text-xl relative right-4" disabled>Issue Now</button>
+            </div>
+        </div>
+        <div class="first bg-blue-300 w-98 h-100 rounded-md flex flex-col items-center">
+            <h1 class="text-2xl mt-5 font-semibold">Microcontroller</h1>
+            <div class="prod w-84 h-56 bg-orange-600 mt-4 rounded-md bg-no-repeat bg-cover" style="background-image: url(prod-1.jpg)"></div>
+            <h1 class="text-green-700 text-3xl mt-5 font-semibold">Available</h1>
+            <div class="buttons mt-5 flex justify-between w-84">
+                <button class="click rounded-md px-4 py-1 bg-white text-xl hover:bg-black hover:text-white" data-modal-toggle="extralarge-modal" id="modal-3">Description</button>
+                <button class="work rounded-md px-4 py-1 bg-white text-xl hover:bg-black hover:text-white">Working Status</button>
+            </div>
+            <div class="btn mt-5 w-84 flex justify-center">
+                <button class="issue rounded-md px-4 py-1 bg-white text-xl relative right-4 hover:bg-black hover:text-white">Issue Now</button>
+            </div>
+        </div>
+    </div>
+    <div class="products flex justify-evenly mt-7">
+        <div class="first bg-blue-300 w-98 h-100 rounded-md flex flex-col items-center">
+            <h1 class="text-2xl mt-5 font-semibold">Capacitors</h1>
+            <div class="prod w-84 h-56 bg-orange-600 mt-4 rounded-md bg-no-repeat bg-cover" style="background-image: url(prod-1.jpg)"></div>
+            <h1 class="text-green-700 text-3xl mt-5 font-semibold">Available</h1>
+            <div class="buttons mt-5 flex justify-between w-84">
+                <button class="click rounded-md px-4 py-1 bg-white text-xl hover:bg-black hover:text-white" data-modal-toggle="extralarge-modal" id="modal-4">Description</button>
+                <button class="work rounded-md px-4 py-1 bg-white text-xl hover:bg-black hover:text-white">Working Status</button>
+            </div>
+            <div class="btn mt-5 w-84 flex justify-center">
+                <button class="issue rounded-md px-4 py-1 bg-white text-xl relative right-4 hover:bg-black hover:text-white">Issue Now</button>
+            </div>
+        </div>
+        <div class="first bg-blue-300 w-98 h-100 rounded-md flex flex-col items-center">
+            <h1 class="text-2xl mt-5 font-semibold">Function Generator</h1>
+            <div class="prod w-84 h-56 bg-orange-600 mt-4 rounded-md bg-no-repeat bg-cover" style="background-image: url(prod-1.jpg)"></div>
+            <h1 class="text-green-700 text-3xl mt-5 font-semibold">Available</h1>
+            <div class="buttons mt-5 flex justify-between w-84">
+                <button class="click rounded-md px-4 py-1 bg-white text-xl hover:bg-black hover:text-white" data-modal-toggle="extralarge-modal" id="modal-5">Description</button>
+                <button class="work rounded-md px-4 py-1 bg-white text-xl hover:bg-black hover:text-white">Working Status</button>
+            </div>
+            <div class="btn mt-5 w-84 flex justify-center">
+                <button class="issue rounded-md px-4 py-1 bg-white text-xl relative right-4 hover:bg-black hover:text-white">Issue Now</button>
+            </div>
+        </div>
+        <div class="first bg-blue-300 w-98 h-100 rounded-md flex flex-col items-center">
+            <h1 class="text-2xl mt-5 font-semibold">DSO</h1>
+            <div class="prod w-84 h-56 bg-orange-600 mt-4 rounded-md bg-no-repeat bg-cover" style="background-image: url(prod-1.jpg)"></div>
+            <h1 class="text-green-700 text-3xl mt-5 font-semibold">Available</h1>
+            <div class="buttons mt-5 flex justify-between w-84">
+                <button class="click rounded-md px-4 py-1 bg-white text-xl hover:bg-black hover:text-white" data-modal-toggle="extralarge-modal" id="modal-6">Description</button>
+                <button class="work rounded-md px-4 py-1 bg-white text-xl hover:bg-black hover:text-white">Working Status</button>
+            </div>
+            <div class="btn mt-5 w-84 flex justify-center">
+                <button class="issue rounded-md px-4 py-1 bg-white text-xl relative right-4 hover:bg-black hover:text-white">Issue Now</button>
+            </div>
+        </div>
+    </div>
+    <div class="products flex justify-evenly mt-7 mb-10">
+        <div class="first bg-blue-300 w-98 h-100 rounded-md flex flex-col items-center">
+            <h1 class="text-2xl mt-5 font-semibold">Product Name</h1>
+            <div class="prod w-84 h-56 bg-orange-600 mt-4 rounded-md bg-no-repeat bg-cover" style="background-image: url(prod-1.jpg)"></div>
+            <h1 class="text-green-700 text-3xl mt-5 font-semibold">Available</h1>
+            <div class="buttons mt-5 flex justify-between w-84">
+                <button class="click rounded-md px-4 py-1 bg-white text-xl hover:bg-black hover:text-white" data-modal-toggle="extralarge-modal" id="modal-7">Description</button>
+                <button class="work rounded-md px-4 py-1 bg-white text-xl hover:bg-black hover:text-white">Working Status</button>
+            </div>
+            <div class="btn mt-5 w-84 flex justify-center">
+                <button class="issue rounded-md px-4 py-1 bg-white text-xl relative right-4 hover:bg-black hover:text-white">Issue Now</button>
+            </div>
+        </div>
+        <div class="first bg-blue-300 w-98 h-100 rounded-md flex flex-col items-center">
+            <h1 class="text-2xl mt-5 font-semibold">Product Name</h1>
+            <div class="prod w-84 h-56 bg-orange-600 mt-4 rounded-md bg-no-repeat bg-cover" style="background-image: url(prod-1.jpg)"></div>
+            <h1 class="text-green-700 text-3xl mt-5 font-semibold">Available</h1>
+            <div class="buttons mt-5 flex justify-between w-84">
+                <button class="click rounded-md px-4 py-1 bg-white text-xl hover:bg-black hover:text-white" data-modal-toggle="extralarge-modal" id="modal-8">Description</button>
+                <button class="work rounded-md px-4 py-1 bg-white text-xl hover:bg-black hover:text-white">Working Status</button>
+            </div>
+            <div class="btn mt-5 w-84 flex justify-center">
+                <button class="issue rounded-md px-4 py-1 bg-white text-xl relative right-4 hover:bg-black hover:text-white">Issue Now</button>
+            </div>
+        </div>
+        <div class="first bg-blue-300 w-98 h-100 rounded-md flex flex-col items-center">
+            <h1 class="text-2xl mt-5 font-semibold">Product Name</h1>
+            <div class="prod w-84 h-56 bg-orange-600 mt-4 rounded-md bg-no-repeat bg-cover" style="background-image: url(prod-1.jpg)"></div>
+            <h1 class="text-green-700 text-3xl mt-5 font-semibold">Available</h1>
+            <div class="buttons mt-5 flex justify-between w-84">
+                <button class="click rounded-md px-4 py-1 bg-white text-xl hover:bg-black hover:text-white" data-modal-toggle="extralarge-modal" id="modal-9">Description</button>
+                <button class="work rounded-md px-4 py-1 bg-white text-xl hover:bg-black hover:text-white">Working Status</button>
+            </div>
+            <div class="btn mt-5 w-84 flex justify-center">
+                <button class="issue rounded-md px-4 py-1 bg-white text-xl relative right-4 hover:bg-black hover:text-white">Issue Now</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="extralarge-modal" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
+        <div class="relative p-4 w-full max-w-7xl h-full md:h-auto">
+            <!-- Modal content -->
+            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700 left-10">
+                <!-- Modal header -->
+                <div class="flex justify-between items-center p-5 rounded-t border-b dark:border-gray-600">
+                    <h3 class="text-3xl font-medium text-gray-900 dark:text-white">
+                        Product Name
+                    </h3>
+                    <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" id="cross" data-modal-toggle="extralarge-modal">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
+                    </button>
+                </div>
+                <!-- Modal body -->
+                <div class="p-6 flex justify-evenly">
+                    <div class="prodimg h-100 w-1/2 rounded-md mr-5 bg-no-repeat bg-cover" style="background-image: url('prod-1.jpg')"></div>
+                    <div class="prodcont bg-blue-300 h-100 w-1/2 rounded-md ml-5 px-5 py-5 text-xl">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias veritatis tempore beatae cupiditate ab deleniti consequatur ducimus similique doloremque. Mollitia, quae voluptate? Cum soluta dignissimos et mollitia! Recusandae nobis culpa aperiam nulla architecto officia. Tempore explicabo repudiandae sint consectetur maiores in pariatur, accusantium, minus autem magni natus ipsum. Optio, ea? Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium aperiam quibusdam earum, necessitatibus unde enim eum, doloribus cum assumenda quo minima itaque tenetur nemo, nam nulla. Nemo eius vel similique laborum repellat, ea inventore doloremque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, consequatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, odio.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="working" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
+        <div class="relative p-4 w-full max-w-4xl h-full md:h-auto">
+            <!-- Modal content -->
+            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700 left-52">
+                <!-- Modal header -->
+                <div class="flex justify-between items-center p-5 rounded-t border-b dark:border-gray-600">
+                    <h3 class="text-3xl font-medium text-gray-900 dark:text-white">
+                        Working Status
+                    </h3>
+                    <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="wokring" id="crossed">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
+                    </button>
+                </div>
+                <!-- Modal body -->
+                <div class="p-6 flex justify-evenly bg-blue-300 rounded-b-lg">
+                    <div class="board h-100 w-1/2">
+                        {{!-- <h1 class="text-2xl">Board No</h1> --}}
+                        
+                        <div class="flex justify-between px-16 py-6">
+                            <h1 class="text-2xl">Board No</h1>
+                            <select class="hello bg-white w-32 rounded-md h-8 ml-10 text-lg pl-2" >
+                                <option value="" disabled selected>Board No.</option>
+                                <option value="/board/MAV1-01">MAV1-01</option>
+                                <option value="/board/MAV1-02">MAV1-02</option>
+                                <option value="/board/MAV1-03">MAV1-03</option>
+                                <option value="/board/MAV1-04">MAV1-04</option>
+                                <option value="/board/MAV1-05">MAV1-05</option>
+                                <option value="/board/MAV1-06">MAV1-06</option>
+                                <option value="/board/MAV1-07">MAV1-07</option>
+                                <option value="/board/MAV1-08">MAV1-08</option>
+                                <option value="/board/MAV1-09">MAV1-09</option>
+                                <option value="/board/MAV1-10">MAV1-10</option>
+                            </select>
+                        </div>
+
+                        <div class="flex justify-between px-16 py-4">
+                            <h1 class="text-2xl">LCD</h1>
+                            <div class="sel h-8 w-32 rounded-md bg-white flex justify-center items-center" id="0">
+                                <img src="check.png" alt="" class="h-8 hidden">
+                                <img src="close.png" alt="" class="h-6 hidden">
+                            </div>
+                        </div>
+                        <div class="flex justify-between px-16 py-4">
+                            <h1 class="text-2xl">AD9833</h1>
+                            <div class="sel h-8 w-32 rounded-md bg-white flex justify-center items-center" id="1">
+                                <img src="check.png" alt="" class="h-8 hidden">
+                                <img src="close.png" alt="" class="h-6 hidden">
+                            </div>
+                        </div>
+                        <div class="flex justify-between px-16 py-4">
+                            <h1 class="text-2xl">555</h1>
+                            <div class="sel h-8 w-32 rounded-md bg-white flex justify-center items-center" id="2">
+                                <img src="check.png" alt="" class="h-8 hidden">
+                                <img src="close.png" alt="" class="h-6 hidden">
+                            </div>
+                        </div>
+                        <div class="flex justify-between px-16 py-4">
+                            <h1 class="text-2xl">Plus 15V</h1>
+                            <div class="sel h-8 w-32 rounded-md bg-white flex justify-center items-center" id="3">
+                                <img src="check.png" alt="" class="h-8 hidden">
+                                <img src="close.png" alt="" class="h-6 hidden">
+                            </div>
+                        </div>
+                        <div class="flex justify-between px-16 py-4">
+                            <h1 class="text-2xl">Minus 15V</h1>
+                            <div class="sel h-8 w-32 rounded-md bg-white flex justify-center items-center" id="4">
+                                <img src="check.png" alt="" class="h-8 hidden">
+                                <img src="close.png" alt="" class="h-6 hidden">
+                            </div>
+                        </div>
+                        <div class="flex justify-between px-16 py-4">
+                            <h1 class="text-2xl">Plus 5V</h1>
+                            <div class="sel h-8 w-32 rounded-md bg-white flex justify-center items-center" id="5">
+                                <img src="check.png" alt="" class="h-8 hidden">
+                                <img src="close.png" alt="" class="h-6 hidden">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="board h-100 w-1/2">
+                        <div class="flex justify-between px-16 py-6">
+                            <h1 class="text-2xl">Plus 3.3V</h1>
+                            <div class="sel h-8 w-32 rounded-md bg-white flex justify-center items-center" id="6">
+                                <img src="check.png" alt="" class="h-8 hidden">
+                                <img src="close.png" alt="" class="h-6 hidden">
+                            </div>
+                        </div>
+                        <div class="flex justify-between px-16 py-4">
+                            <h1 class="text-2xl">Var DC</h1>
+                            <div class="sel h-8 w-32 rounded-md bg-white flex justify-center items-center" id="7">
+                                <img src="check.png" alt="" class="h-8 hidden">
+                                <img src="close.png" alt="" class="h-6 hidden">
+                            </div>
+                        </div>
+                        <div class="flex justify-between px-16 py-4">
+                            <h1 class="text-2xl">CC LED</h1>
+                            <div class="sel h-8 w-32 rounded-md bg-white flex justify-center items-center" id="8">
+                                <img src="check.png" alt="" class="h-8 hidden">
+                                <img src="close.png" alt="" class="h-6 hidden">
+                            </div>
+                        </div>
+                        <div class="flex justify-between px-16 py-4">
+                            <h1 class="text-2xl">CA LED</h1>
+                            <div class="sel h-8 w-32 rounded-md bg-white flex justify-center items-center" id="9">
+                                <img src="check.png" alt="" class="h-8 hidden">
+                                <img src="close.png" alt="" class="h-6 hidden">
+                            </div>
+                        </div>
+                        <div class="flex justify-between px-16 py-4">
+                            <h1 class="text-2xl">7 Segment-1</h1>
+                            <div class="sel h-8 w-32 rounded-md bg-white flex justify-center items-center" id="10">
+                                <img src="check.png" alt="" class="h-8 hidden">
+                                <img src="close.png" alt="" class="h-6 hidden">
+                            </div>
+                        </div>
+                        <div class="flex justify-between px-16 py-4">
+                            <h1 class="text-2xl">7 Segment-2</h1>
+                            <div class="sel h-8 w-32 rounded-md bg-white flex justify-center items-center" id="11">
+                                <img src="check.png" alt="" class="h-8 hidden">
+                                <img src="close.png" alt="" class="h-6 hidden">
+                            </div>
+                        </div>
+                        <div class="flex justify-between px-16 py-4">
+                            <h1 class="text-2xl">Remark</h1>
+                            <p class="px-2 py-2 rounded-md bg-white hidden" id="para"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="issues" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
+        <div class="relative p-4 w-full max-w-7xl h-full md:h-auto">
+            <!-- Modal content -->
+            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700 left-10">
+                <!-- Modal header -->
+                <div class="flex justify-between items-center p-5 rounded-t border-b dark:border-gray-600">
+                    <h3 class="text-3xl font-medium text-gray-900 dark:text-white">
+                        Dummy Values
+                    </h3>
+                    <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" id="issued" data-modal-toggle="issues">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
+                    </button>
+                </div>
+                <!-- Modal body -->
+                <form class="px-6 pb-4 space-y-6 lg:px-8 sm:pb-6 xl:pb-8" action="/issuenow" method="POST" id="myform">
+                    <div class="flex">
+                        <div class="w-1/2 mr-10">
+                            <div>
+                                <label for="name" class="block mb-2 text-md font-medium text-gray-900 dark:text-gray-300 mt-2">Name</label>
+                                <input type="name" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="" required>
+                            </div>
+                            <div>
+                                <label for="uid" class="block mb-2 text-md font-medium text-gray-900 dark:text-gray-300 mt-2">UID</label>
+                                <input type="number" name="uid" id="uid" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block mb-2 text-md font-medium text-gray-900 dark:text-gray-300 mt-2">Email ID</label>
+                                <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="SPIT Email" required>
+                            </div>
+                            <div>
+                                <label for="contact" class="block mb-2 text-md font-medium text-gray-900 dark:text-gray-300 mt-2">Contact No.</label>
+                                <input type="number" name="contact" id="contact" placeholder="" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
+                            </div>
+                            <div>
+                                <label for="year" class="block mb-2 text-md font-medium text-gray-900 dark:text-gray-300 mt-2">Year</label>
+                                <input type="text" name="year" id="year" placeholder="" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
+                            </div>
+                            <div>
+                                <label for="branch" class="block mb-2 text-md font-medium text-gray-900 dark:text-gray-300 mt-2">Branch</label>
+                                <input type="text" name="branch" id="branch" placeholder="" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
+                            </div>
+                            <div>
+                                <label for="subject" class="block mb-2 text-md font-medium text-gray-900 dark:text-gray-300 mt-2">Subject</label>
+                                <input type="text" name="subject" id="subject" placeholder="" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
+                            </div>
+                        </div>
+                        <div class="w-1/2 mr-10">
+                            <div>
+                                <label for="facname" class="block mb-2 text-md font-medium text-gray-900 dark:text-gray-300 mt-2">Faculty Name</label>
+                                <input type="name" name="facname" id="facname" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="" required>
+                            </div>
+                            <div>
+                                <label for="ssd" class="block mb-2 text-md font-medium text-gray-900 dark:text-gray-300 mt-2">Sem Start Date</label>
+                                <input type="date" name="ssd" id="ssd" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="" required>
+                            </div>
+                            <div>
+                                <label for="sed" class="block mb-2 text-md font-medium text-gray-900 dark:text-gray-300 mt-2">Sem End Date</label>
+                                <input type="date" name="sed" id="sed" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="" required>
+                            </div>
+                            <div>
+                                <label for="brd" class="block mb-2 text-md font-medium text-gray-900 dark:text-gray-300 mt-2">Board No.</label>
+                                <input type="text" name="brd" id="brd" placeholder="" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
+                            </div>
+                            <div>
+                                <label for="issdate" class="block mb-2 text-md font-medium text-gray-900 dark:text-gray-300 mt-2">Issue Date</label>
+                                <input type="date" name="issdate" id="issdate" placeholder="" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
+                            </div>
+                            <div>
+                                <label for="retdate" class="block mb-2 text-md font-medium text-gray-900 dark:text-gray-300 mt-2">Return Date</label>
+                                <input type="date" name="retdate" id="retdate" placeholder="" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
+                            </div>
+                            <div>
+                                <label for="autho" class="block mb-2 text-md font-medium text-gray-900 dark:text-gray-300 mt-2">Authorized By</label>
+                                <input type="text" name="autho" id="autho" placeholder="" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
+                            </div>
+                            <div class="hidden">
+                                <label for="pname" class="block mb-2 text-md font-medium text-gray-900 dark:text-gray-300 mt-2">Product Name</label>
+                                <input type="text" name="pname" id="pname" placeholder="" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-md px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" id="sub">Issue Now</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {{>footer}}
+</body>
+<script src="./js/inventory.js"></script>
+<script src="./js/login.js"></script>
+</html>

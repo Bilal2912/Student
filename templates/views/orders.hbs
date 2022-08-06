@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./styles/style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                screens:{
+                xxsm:'300px',
+                xsm:'450px',
+                sm:'670px',
+                md:'768px',
+                lg: '1024px',
+                xl: '1280px',
+                '2xl': '1536px',
+                },
+                extend: {
+                    spacing:{
+                        13:'3.35rem',
+                        15:'3.75rem',
+                        18:'4.5rem',
+                        22:'5.5rem',
+                        26:'6.4rem',
+                        30:'7.5rem',
+                        84:'21rem',
+                        86:'21.25rem',
+                        87:'21.55rem',
+                        88:'22rem',
+                        92:'23rem',
+                        98:'25rem',
+                        100:'30rem'
+                    }
+                },
+            },
+        }
+    </script>
+    <title>S.P.I.T. Inventory | Your Orders</title>
+</head>
+<body>
+    {{>navbar}}
+    {{>login}}
+    <h1 class="text-5xl relative left-20 top-5">Your Orders</h1>
+    <div class="flex justify-center items-center h-80" id="nosign">
+        <div class="bg-blue-300 w-2/4 h-40 rounded-md flex justify-center items-center font-semibold text-2xl">Please Sign in to view your orders</div>
+    </div>
+    <div class="px-12 mt-12 flex flex-col justify-center items-center" id="sign">
+        <div class="rows bg-blue-300 w-full rounded-md px-5 py-5 flex justify-around mb-7">
+            <div class="w-40 h-40 bg-red-600 rounded-md bg-no-repeat bg-cover" style="background-image: url('prod-1.jpg')" id="prodimg-1">
+            </div>
+            <div class="flex flex-col justify-center ml-10 relative right-8" id="prodinfo-1">
+                <h1 class="mb-4 text-4xl">Product Name</h1>
+                <h1 class="mb-2 text-3xl">Date of Issue: 31/03/2022</h1>
+                <h1 class="text-3xl">Date of Return: 10/04/2022</h1>
+            </div>
+            <div class="w-1/2 flex flex-col items-center justify-around" id="initialdiv-1">
+                <div class="flex justify-center w-full text-4xl">
+                    <button class="det hover:text-blue-800 bg-blue-800 rounded-md px-10 py-5 text-white text-4xl hover:bg-white font-semibold cursor-pointer" id="initdet-1">Order Details</button>
+                    {{!-- <button class="hover:text-blue-800 cursor-pointer">Order Status ></button> --}}
+                </div>
+                {{!-- <button class="pro bg-blue-800 rounded-md px-7 py-2 text-white text-xl hover:bg-white hover:text-blue-800 font-semibold mt-7" id="initpro-1">Report a Problem</button> --}}
+            </div>
+            <div class="dets bg-white h-52 w-2/3 rounded-md hidden" id="finaldiv-1">
+                <span class="find hover:text-blue-800 cursor-pointer text-4xl" id="findet-1"> < Order Details</span>
+                <div class="px-5 py-5 h-full flex">
+                    <div class="w-1/2 text-2xl mr-10">
+                        <div class="flex justify-between mb-2">
+                            <h1>Name:</h1>
+                            <h1>Hehe</h1>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <h1>UID:</h1>
+                            <h1>78932</h1>
+                        </div>
+                        <div class="flex justify-between">
+                            <h1>Contact No.:</h1>
+                            <h1>947329304</h1>
+                        </div>
+                    </div>
+                    <div class="w-1/2 text-2xl">
+                        <div class="flex justify-between mb-2">
+                            <h1>Subject:</h1>
+                            <h1>DC</h1>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <h1>Faculty Name:</h1>
+                            <h1>fnjknjf</h1>
+                        </div>
+                        <div class="flex justify-between">
+                            <h1>Authorized By:</h1>
+                            <h1>sfkjsdfn</h1>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <div class="bg-white h-80 w-2/3 rounded-md hidden" id="problem-1">
+                <span class="prob hover:text-blue-800 cursor-pointer text-4xl" id="finsta-1"> < Report a Problem</span>
+                <div class="px-5 py-5 flex relative bottom-3">
+                    <textarea name="" id="" cols="100" rows="7" placeholder="Please Describe your Problem here" class="px-3 py-2 text-xl rounded-md border-black border-2"></textarea>
+                </div>
+                <div class="flex justify-between relative bottom-1">
+                    <div class="bg-blue-800 h-10 w-10 rounded-md relative bottom-5 left-5 flex justify-center items-center hover:bg-blue-900 cursor-pointer">
+                        <img src="attach.png" alt="" class="h-7">
+                    </div>
+                    <h1 class="text-xl relative bottom-4 right-36 font-semibold">Attach Screenshots/Videos for Proof</h1>
+                    <button class="sub px-5 py-2 bg-blue-800 text-white rounded-md font-semibold hover:bg-blue-900 relative bottom-5 right-4">Submit</button>
+                </div>
+            </div>
+        </div>
+        <div class="rows bg-blue-300 w-full rounded-md px-5 py-5 flex justify-around mb-7">
+            <div class="w-40 h-40 bg-red-600 rounded-md bg-no-repeat bg-cover" style="background-image: url('prod-1.jpg')" id="prodimg-2">
+            </div>
+            <div class="flex flex-col justify-center ml-10 relative right-8" id="prodinfo-2">
+                <h1 class="mb-4 text-4xl">Product Name</h1>
+                <h1 class="mb-2 text-3xl">Date of Issue: 31/03/2022</h1>
+                <h1 class="text-3xl">Date of Return: 10/04/2022</h1>
+            </div>
+            <div class="w-1/2 flex flex-col items-center justify-around" id="initialdiv-2">
+                <div class="flex justify-center w-full text-4xl">
+                    <button class="det hover:text-blue-800 bg-blue-800 rounded-md px-10 py-5 text-white text-4xl hover:bg-white font-semibold cursor-pointer" id="initdet-1">Order Details</button>
+                    {{!-- <button class="hover:text-blue-800 cursor-pointer">Order Status ></button> --}}
+                </div>
+                {{!-- <button class="pro bg-blue-800 rounded-md px-7 py-2 text-white text-xl hover:bg-white hover:text-blue-800 font-semibold mt-7" id="initpro-2">Report a Problem</button> --}}
+            </div>
+            <div class="dets bg-white h-52 w-2/3 rounded-md hidden" id="finaldiv-2">
+                <span class="find hover:text-blue-800 cursor-pointer text-4xl" id="findet-2"> < Order Details</span>
+                <div class="px-5 py-5 h-full flex">
+                    <div class="w-1/2 text-2xl mr-10">
+                        <div class="flex justify-between mb-2">
+                            <h1>Name:</h1>
+                            <h1>Bilal Sani</h1>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <h1>UID:</h1>
+                            <h1>2019110049</h1>
+                        </div>
+                        <div class="flex justify-between">
+                            <h1>Contact No.:</h1>
+                            <h1>9167924380</h1>
+                        </div>
+                    </div>
+                    <div class="w-1/2 text-2xl">
+                        <div class="flex justify-between mb-2">
+                            <h1>Subject:</h1>
+                            <h1>VLSI</h1>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <h1>Faculty Name:</h1>
+                            <h1>Prof Y.S. Rao</h1>
+                        </div>
+                        <div class="flex justify-between">
+                            <h1>Authorized By:</h1>
+                            <h1>Prof Najib</h1>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <div class="bg-white h-80 w-2/3 rounded-md hidden" id="problem-2">
+                <span class="prob hover:text-blue-800 cursor-pointer text-4xl" id="finsta-2"> < Report a Problem</span>
+                <div class="px-5 py-5 flex relative bottom-3">
+                    <textarea name="" id="" cols="100" rows="7" placeholder="Please Describe your Problem here" class="px-3 py-2 text-xl rounded-md border-black border-2"></textarea>
+                </div>
+                <div class="flex justify-between relative bottom-1">
+                    <div class="bg-blue-800 h-10 w-10 rounded-md relative bottom-5 left-5 flex justify-center items-center hover:bg-blue-900 cursor-pointer">
+                        <img src="attach.png" alt="" class="h-7">
+                    </div>
+                    <h1 class="text-xl relative bottom-4 right-36 font-semibold">Attach Screenshots/Videos for Proof</h1>
+                    <button class="sub px-5 py-2 bg-blue-800 text-white rounded-md font-semibold hover:bg-blue-900 relative bottom-5 right-4">Submit</button>
+                </div>
+            </div>
+        </div>
+        <div class="rows bg-blue-300 w-full rounded-md px-5 py-5 flex justify-around mb-7">
+            <div class="w-40 h-40 bg-red-600 rounded-md bg-no-repeat bg-cover" style="background-image: url('prod-1.jpg')" id="prodimg-3">
+            </div>
+            <div class="flex flex-col justify-center ml-10 relative right-8" id="prodinfo-3">
+                <h1 class="mb-4 text-4xl">Product Name</h1>
+                <h1 class="mb-2 text-3xl">Date of Issue: 31/03/2022</h1>
+                <h1 class="text-3xl">Date of Return: 10/04/2022</h1>
+            </div>
+            <div class="w-1/2 flex flex-col items-center justify-around" id="initialdiv-3">
+                <div class="flex justify-center w-full text-4xl">
+                    <button class="det hover:text-blue-800 bg-blue-800 rounded-md px-10 py-5 text-white text-4xl hover:bg-white font-semibold cursor-pointer" id="initdet-1">Order Details</button>
+                    {{!-- <button class="hover:text-blue-800 cursor-pointer">Order Status ></button> --}}
+                </div>
+                {{!-- <button class="pro bg-blue-800 rounded-md px-7 py-2 text-white text-xl hover:bg-white hover:text-blue-800 font-semibold mt-7" id="initpro-3">Report a Problem</button> --}}
+            </div>
+            <div class="dets bg-white h-52 w-2/3 rounded-md hidden" id="finaldiv-3">
+                <span class="find hover:text-blue-800 cursor-pointer text-4xl" id="findet-3"> < Order Details</span>
+                <div class="px-5 py-5 h-full flex">
+                    <div class="w-1/2 text-2xl mr-10">
+                        <div class="flex justify-between mb-2">
+                            <h1>Name:</h1>
+                            <h1>Bilal Sani</h1>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <h1>UID:</h1>
+                            <h1>2019110049</h1>
+                        </div>
+                        <div class="flex justify-between">
+                            <h1>Contact No.:</h1>
+                            <h1>9167924380</h1>
+                        </div>
+                    </div>
+                    <div class="w-1/2 text-2xl">
+                        <div class="flex justify-between mb-2">
+                            <h1>Subject:</h1>
+                            <h1>VLSI</h1>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <h1>Faculty Name:</h1>
+                            <h1>Prof Y.S. Rao</h1>
+                        </div>
+                        <div class="flex justify-between">
+                            <h1>Authorized By:</h1>
+                            <h1>Prof Najib</h1>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <div class="bg-white h-80 w-2/3 rounded-md hidden" id="problem-3">
+                <span class="prob hover:text-blue-800 cursor-pointer text-4xl" id="finsta-3"> < Report a Problem</span>
+                <div class="px-5 py-5 flex relative bottom-3">
+                    <textarea name="" id="" cols="100" rows="7" placeholder="Please Describe your Problem here" class="px-3 py-2 text-xl rounded-md border-black border-2"></textarea>
+                </div>
+                <div class="flex justify-between relative bottom-1">
+                    <div class="bg-blue-800 h-10 w-10 rounded-md relative bottom-5 left-5 flex justify-center items-center hover:bg-blue-900 cursor-pointer">
+                        <img src="attach.png" alt="" class="h-7">
+                    </div>
+                    <h1 class="text-xl relative bottom-4 right-36 font-semibold">Attach Screenshots/Videos for Proof</h1>
+                    <button class="sub px-5 py-2 bg-blue-800 text-white rounded-md font-semibold hover:bg-blue-900 relative bottom-5 right-4">Submit</button>
+                </div>
+            </div>
+        </div>
+        <div class="rows bg-blue-300 w-full rounded-md px-5 py-5 flex justify-around mb-7">
+            <div class="w-40 h-40 bg-red-600 rounded-md bg-no-repeat bg-cover" style="background-image: url('prod-1.jpg')" id="prodimg-4">
+            </div>
+            <div class="flex flex-col justify-center ml-10 relative right-8" id="prodinfo-4">
+                <h1 class="mb-4 text-4xl">Product Name</h1>
+                <h1 class="mb-2 text-3xl">Date of Issue: 31/03/2022</h1>
+                <h1 class="text-3xl">Date of Return: 10/04/2022</h1>
+            </div>
+            <div class="w-1/2 flex flex-col items-center justify-around" id="initialdiv-4">
+                <div class="flex justify-center w-full text-4xl">
+                    <button class="det hover:text-blue-800 bg-blue-800 rounded-md px-10 py-5 text-white text-4xl hover:bg-white font-semibold cursor-pointer" id="initdet-1">Order Details</button>
+                    {{!-- <button class="hover:text-blue-800 cursor-pointer">Order Status ></button> --}}
+                </div>
+                {{!-- <button class="pro bg-blue-800 rounded-md px-7 py-2 text-white text-xl hover:bg-white hover:text-blue-800 font-semibold mt-7" id="initpro-4">Report a Problem</button> --}}
+            </div>
+            <div class="dets bg-white h-52 w-2/3 rounded-md hidden" id="finaldiv-4">
+                <span class="find hover:text-blue-800 cursor-pointer text-4xl" id="findet-4"> < Order Details</span>
+                <div class="px-5 py-5 h-full flex">
+                    <div class="w-1/2 text-2xl mr-10">
+                        <div class="flex justify-between mb-2">
+                            <h1>Name:</h1>
+                            <h1>Bilal Sani</h1>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <h1>UID:</h1>
+                            <h1>2019110049</h1>
+                        </div>
+                        <div class="flex justify-between">
+                            <h1>Contact No.:</h1>
+                            <h1>9167924380</h1>
+                        </div>
+                    </div>
+                    <div class="w-1/2 text-2xl">
+                        <div class="flex justify-between mb-2">
+                            <h1>Subject:</h1>
+                            <h1>VLSI</h1>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <h1>Faculty Name:</h1>
+                            <h1>Prof Y.S. Rao</h1>
+                        </div>
+                        <div class="flex justify-between">
+                            <h1>Authorized By:</h1>
+                            <h1>Prof Najib</h1>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <div class="bg-white h-80 w-2/3 rounded-md hidden" id="problem-4">
+                <span class="prob hover:text-blue-800 cursor-pointer text-4xl" id="finsta-4"> < Report a Problem</span>
+                <div class="px-5 py-5 flex relative bottom-3">
+                    <textarea name="" id="" cols="100" rows="7" placeholder="Please Describe your Problem here" class="px-3 py-2 text-xl rounded-md border-black border-2"></textarea>
+                </div>
+                <div class="flex justify-between relative bottom-1">
+                    <div class="bg-blue-800 h-10 w-10 rounded-md relative bottom-5 left-5 flex justify-center items-center hover:bg-blue-900 cursor-pointer">
+                        <img src="attach.png" alt="" class="h-7">
+                    </div>
+                    <h1 class="text-xl relative bottom-4 right-36 font-semibold">Attach Screenshots/Videos for Proof</h1>
+                    <button class="sub px-5 py-2 bg-blue-800 text-white rounded-md font-semibold hover:bg-blue-900 relative bottom-5 right-4">Submit</button>
+                </div>
+            </div>
+        </div>
+        <div class="rows bg-blue-300 w-full rounded-md px-5 py-5 flex justify-around mb-7">
+            <div class="w-40 h-40 bg-red-600 rounded-md bg-no-repeat bg-cover" style="background-image: url('prod-1.jpg')" id="prodimg-5">
+            </div>
+            <div class="flex flex-col justify-center ml-10 relative right-8" id="prodinfo-5">
+                <h1 class="mb-4 text-4xl">Product Name</h1>
+                <h1 class="mb-2 text-3xl">Date of Issue: 31/03/2022</h1>
+                <h1 class="text-3xl">Date of Return: 10/04/2022</h1>
+            </div>
+            <div class="w-1/2 flex flex-col items-center justify-around" id="initialdiv-5">
+                <div class="flex justify-center w-full text-4xl">
+                    <button class="det hover:text-blue-800 bg-blue-800 rounded-md px-10 py-5 text-white text-4xl hover:bg-white font-semibold cursor-pointer" id="initdet-1">Order Details</button>
+                    {{!-- <button class="hover:text-blue-800 cursor-pointer">Order Status ></button> --}}
+                </div>
+                {{!-- <button class="pro bg-blue-800 rounded-md px-7 py-2 text-white text-xl hover:bg-white hover:text-blue-800 font-semibold mt-7" id="initpro-5">Report a Problem</button> --}}
+            </div>
+            <div class="dets bg-white h-52 w-2/3 rounded-md hidden" id="finaldiv-5">
+                <span class="find hover:text-blue-800 cursor-pointer text-4xl" id="findet-5"> < Order Details</span>
+                <div class="px-5 py-5 h-full flex">
+                    <div class="w-1/2 text-2xl mr-10">
+                        <div class="flex justify-between mb-2">
+                            <h1>Name:</h1>
+                            <h1>Bilal Sani</h1>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <h1>UID:</h1>
+                            <h1>2019110049</h1>
+                        </div>
+                        <div class="flex justify-between">
+                            <h1>Contact No.:</h1>
+                            <h1>9167924380</h1>
+                        </div>
+                    </div>
+                    <div class="w-1/2 text-2xl">
+                        <div class="flex justify-between mb-2">
+                            <h1>Subject:</h1>
+                            <h1>VLSI</h1>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <h1>Faculty Name:</h1>
+                            <h1>Prof Y.S. Rao</h1>
+                        </div>
+                        <div class="flex justify-between">
+                            <h1>Authorized By:</h1>
+                            <h1>Prof Najib</h1>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <div class="bg-white h-80 w-2/3 rounded-md hidden" id="problem-5">
+                <span class="prob hover:text-blue-800 cursor-pointer text-4xl" id="finsta-5"> < Report a Problem</span>
+                <div class="px-5 py-5 flex relative bottom-3">
+                    <textarea name="" id="" cols="100" rows="7" placeholder="Please Describe your Problem here" class="px-3 py-2 text-xl rounded-md border-black border-2"></textarea>
+                </div>
+                <div class="flex justify-between relative bottom-1">
+                    <div class="bg-blue-800 h-10 w-10 rounded-md relative bottom-5 left-5 flex justify-center items-center hover:bg-blue-900 cursor-pointer">
+                        <img src="attach.png" alt="" class="h-7">
+                    </div>
+                    <h1 class="text-xl relative bottom-4 right-36 font-semibold">Attach Screenshots/Videos for Proof</h1>
+                    <button class="sub px-5 py-2 bg-blue-800 text-white rounded-md font-semibold hover:bg-blue-900 relative bottom-5 right-4">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{>footer}}
+</body>
+<script type="module" src="./js/orders.js"></script>
+<script src="./js/login.js"></script>
+</html>
